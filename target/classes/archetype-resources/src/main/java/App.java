@@ -1,7 +1,18 @@
 package $package;
 
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
+
+@Component
 public class App {
-    public static void main( String[] args ) {
-        System.out.println( "Hello World!" );
+    @Activate
+    public void activate() {
+        System.out.println("Component Activated");
+    }
+
+    @Deactivate
+    public void deactivate() {
+        System.out.println("Component Deactivated");
     }
 }
